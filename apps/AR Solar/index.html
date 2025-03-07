@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css" />
+    <script src="../../assets/js/AR/aframe.js"></script>
+    <script src="../../assets/js/AR/aframe-extras.min.js"></script>
+    <script src="../../assets/js/AR/mindar-image-aframe.prod.js"></script>
+    <script src="../../assets/js/audio_player.js"></script>
+    <script src="../AR Solar/main.js"></script>
+
+</head>
+
+<body>
+    <!-- <div style="position: absolute; z-index: 1000"> -->
+    <div style="position: relative; z-index: 1000">
+        <button id="info_button" class="btn btn-primary" style="margin: 5;" id="info_button">Play</button>
+        <a class="btn btn-danger float-right" style="margin: 5; float: right;">Close</a>
+    </div>
+
+    <a-scene mindar-image="imageTargetSrc: ../AR Solar/mind_files/solar_targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-assets>
+            <a-asset-item id="cover" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="sun" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="mercury" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="venus" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="earth" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="mars" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="jupiter" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="saturn" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="uranus" src="../AR Solar/models/scene.gltf"></a-asset-item>
+            <a-asset-item id="neptune" src="../AR Solar/models/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        <!-- Cover -->
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#cover" animation-mixer>
+        </a-entity>
+
+        <!-- Sun -->
+        <a-entity id="sun_model" mindar-image-target="targetIndex: 1" >
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.2 0.2 0.2" src="#sun" animation-mixer>
+        </a-entity>
+
+        <!-- Mercury -->
+        <a-entity mindar-image-target="targetIndex: 2">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#mercury" animation-mixer>
+        </a-entity>
+
+        <!-- Venus -->
+        <a-entity mindar-image-target="targetIndex: 3">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#venus" animation-mixer>
+        </a-entity>
+
+        <!-- Earth -->
+        <a-entity mindar-image-target="targetIndex: 4">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#earth" animation-mixer>
+        </a-entity>
+
+        <!-- Mars -->
+        <a-entity mindar-image-target="targetIndex: 5">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#mars" animation-mixer>
+        </a-entity>
+
+        <!-- Jupiter -->
+        <a-entity mindar-image-target="targetIndex: 6">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#jupiter" animation-mixer>
+        </a-entity>
+
+        <!-- Saturn -->
+        <a-entity mindar-image-target="targetIndex: 7">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#saturn" animation-mixer>
+        </a-entity>
+
+        <!-- Uranus -->
+        <a-entity mindar-image-target="targetIndex: 8">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#uranus" animation-mixer>
+        </a-entity>
+
+        <!-- Neptune -->
+        <a-entity mindar-image-target="targetIndex: 9">
+            <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#neptune" animation-mixer>
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
+
