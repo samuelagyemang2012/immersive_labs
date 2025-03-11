@@ -12,7 +12,7 @@
 
 <body>
   <div class="container">
-    
+
     <div style="margin-top: 4%;">
       <!-- button -->
       <a class="btn btn-danger float-end p-3 rounded-circle" href="../../pages/apps/ar_solar_system.html" role="button"
@@ -59,7 +59,7 @@
 
 
   <a-scene mindar-image="imageTargetSrc: ../AR Solar/mind_files/solar_targets.mind;" color-space="sRGB"
-    renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+    renderer="colorManagement: true, physicallyCorrectLights" xr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
     <a-assets>
       <a-asset-item id="cover" src="../AR Solar/models/scene.gltf"></a-asset-item>
@@ -80,9 +80,9 @@
 
 
     <!-- Cover -->
-    <!-- <a-entity mindar-image-target="targetIndex: 0">
+    <a-entity mindar-image-target="targetIndex: 0">
       <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#cover" animation-mixer>
-    </a-entity> -->
+    </a-entity>
 
     <!-- Sun -->
     <a-entity id="sun_model" mindar-image-target="targetIndex: 1">
