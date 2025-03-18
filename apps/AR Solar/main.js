@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // --------------------------------------------------------------
 
   function onTargetFound(target) {
+    // console.log(planetData[target.id])
     var targetTitle = planetData[target.id].title
     var targetContent = planetData[target.id].text
     var targetSound = planetData[target.id].audio
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //set sound 
     var model = document.querySelector('#' + planetData[target.id].click_id)
     model.addEventListener('click', () => {
+      // console.log(targetTitle)
       title.innerHTML = targetTitle
       planetText.innerHTML = targetContent
       player.src = audioBase + targetSound
