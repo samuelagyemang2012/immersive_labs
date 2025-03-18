@@ -58,20 +58,20 @@
   <!-- end info div -->
 
 
-  <a-scene mindar-image="imageTargetSrc: ../AR Solar/mind_files/solar_targets.mind;" color-space="sRGB"
+  <a-scene mindar-image="imageTargetSrc: ../AR Solar/mind_files/solar_targets.mind; maxTrack: 10" color-space="sRGB"
     renderer="colorManagement: true, physicallyCorrectLights" xr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
     <a-assets>
-      <a-asset-item id="cover" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="sun" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="mercury" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="venus" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="earth" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="mars" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="jupiter" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="saturn" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="uranus" src="../AR Solar/models/scene.gltf"></a-asset-item>
-      <a-asset-item id="neptune" src="../AR Solar/models/scene.gltf"></a-asset-item>
+      <a-asset-item id="cover" src="../AR Solar/models/earth.glb"></a-asset-item>
+      <a-asset-item id="sun" src="../AR Solar/models/sun.glb"></a-asset-item>
+      <a-asset-item id="mercury" src="../AR Solar/models/mercury.glb"></a-asset-item>
+      <a-asset-item id="venus" src="../AR Solar/models/venus.glb"></a-asset-item>
+      <a-asset-item id="earth" src="../AR Solar/models/earth.glb"></a-asset-item>
+      <a-asset-item id="mars" src="../AR Solar/models/mars.glb"></a-asset-item>
+      <a-asset-item id="jupiter" src="../AR Solar/models/jupiter.glb"></a-asset-item>
+      <a-asset-item id="saturn" src="../AR Solar/models/saturn.glb"></a-asset-item>
+      <a-asset-item id="uranus" src="../AR Solar/models/uranus.glb"></a-asset-item>
+      <a-asset-item id="neptune" src="../AR Solar/models/neptune.glb"></a-asset-item>
     </a-assets>
 
     <!-- <a-camera position="0 0 0" look-controls="enabled: false"></a-camera> -->
@@ -86,49 +86,57 @@
 
     <!-- Sun -->
     <a-entity id="sun_model" mindar-image-target="targetIndex: 1">
-      <a-gltf-model id="sun_3d" rotation="90 0 0 " position="0 0 0" scale="0.2 0.2 0.2" src="#sun" animation-mixer
-        class="clickable">
+      <a-gltf-model id="sun_3d" rotation="0 180 0" position="0 0 0" scale="0.7 0.7 0.7" src="#sun" animation-mixer class="clickable"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
     </a-entity>
 
     <!-- Mercury -->
-    <!-- <a-entity mindar-image-target="targetIndex: 2">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#mercury" animation-mixer>
-            </a-entity> -->
+    <a-entity id="mercury_model" mindar-image-target="targetIndex: 2">
+      <a-gltf-model id="mercury_3d" rotation="0 180 0 " position="0 0 0" scale="0.2 0.2 0.2" src="#mercury" animation-mixer class="clickable"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Venus -->
-    <!-- <a-entity mindar-image-target="targetIndex: 3">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#venus" animation-mixer>
-            </a-entity> -->
+    <a-entity id="venus_model" mindar-image-target="targetIndex: 3">
+      <a-gltf-model id="venus_3d" rotation="0 180 0 " position="0 0 0" scale="0.3 0.3 0.3" src="#venus" animation-mixer class="clickable"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Earth -->
-    <!-- <a-entity mindar-image-target="targetIndex: 4">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#earth" animation-mixer>
-            </a-entity> -->
+    <a-entity id="earth_model" mindar-image-target="targetIndex: 4">
+      <a-gltf-model id="earth_3d" rotation="0 180 0 " position="0 0 0" scale="0.4 0.4 0.4" src="#earth" animation-mixer class="clickable"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Mars -->
-    <!-- <a-entity mindar-image-target="targetIndex: 5">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#mars" animation-mixer>
-            </a-entity> -->
+    <a-entity id="mars_model" mindar-image-target="targetIndex: 5">
+      <a-gltf-model id="mars_3d" rotation="0 180 0 " position="0 0 0" scale="0.25 0.25 0.25" src="#mars" animation-mixer
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Jupiter -->
-    <!-- <a-entity mindar-image-target="targetIndex: 6">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#jupiter" animation-mixer>
-            </a-entity> -->
+    <a-entity id="jupiter_model" mindar-image-target="targetIndex: 6">
+      <a-gltf-model id="jupiter_3d" rotation="0 180 0 " position="0 0 0" scale="0.7 0.7 0.7" src="#jupiter" animation-mixer
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Saturn -->
-    <!-- <a-entity mindar-image-target="targetIndex: 7">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#saturn" animation-mixer>
-            </a-entity> -->
+    <a-entity id="saturn_model" mindar-image-target="targetIndex: 7">
+      <a-gltf-model id="saturn_3d" rotation="0 180 -26.7" position="0 0 0" scale="0.4 0.4 0.4" src="#saturn" animation-mixer
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Uranus -->
-    <!-- <a-entity mindar-image-target="targetIndex: 8">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#uranus" animation-mixer>
-            </a-entity> -->
+    <a-entity id="uranus_model" mindar-image-target="targetIndex: 8">
+      <a-gltf-model id="uranus_3d" rotation="0 180 0 " position="0 0 0" scale="0.5 0.5 0.5" src="#uranus" animation-mixer
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
     <!-- Neptune -->
-    <!-- <a-entity mindar-image-target="targetIndex: 9">
-                <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="0.1 0.1 0.1" src="#neptune" animation-mixer>
-            </a-entity> -->
+    <a-entity id="neptune_model" mindar-image-target="targetIndex: 9">
+      <a-gltf-model id="neptune_3d" rotation="0 180 0 " position="0 0 0" scale="0.5 0.5 0.5" src="#neptune" animation-mixer
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
 
   </a-scene>
 

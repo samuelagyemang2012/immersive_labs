@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
   let arSystem;
 
   // Targets
-  const sunModel = document.querySelector('#sun_model')
-  const mercuryModel = document.querySelector('#mercuryModel');
-
-  // const examplePlane = document.querySelector('#example-plane');
-  // const examplePlane = document.querySelector('#example-plane');
-  // const examplePlane = document.querySelector('#example-plane');
-  // const examplePlane = document.querySelector('#example-plane');
-  // const examplePlane = document.querySelector('#example-plane');
-  // const examplePlane = document.querySelector('#example-plane');
+  const sun_model = document.querySelector('#sun_model')
+  const mercury_model = document.querySelector('#mercury_model');
+  const venus_model = document.querySelector('#venus_model');
+  const earth_model = document.querySelector('#earth_model');
+  const mars_model = document.querySelector('#mars_model');
+  const jupiter_model = document.querySelector('#jupiter_model');
+  const saturn_model = document.querySelector('#saturn_model');
+  const uranus_model = document.querySelector('#uranus_model');
+  const neptune_model = document.querySelector('#neptune_model');
 
   // Add events
   sceneEl.addEventListener('loaded', function () {
@@ -45,19 +45,49 @@ document.addEventListener('DOMContentLoaded', function () {
     //set sound 
     var model = document.querySelector('#' + planetData[target.id].click_id)
     model.addEventListener('click', () => {
-      player.src = audioBase + targetSound;
+      title.innerHTML = targetTitle
+      planetText.innerHTML = targetContent
+      player.src = audioBase + targetSound
       player.play()
     })
   }
 
   
   // detect target found
-  sunModel.addEventListener('targetFound', () => {
-    onTargetFound(sunModel)
+  sun_model.addEventListener('targetFound', () => {
+    onTargetFound(sun_model)
   })
 
-  mercuryModel.addEventListener('targetFound', () => {
-    onTargetFound(mercuryModel)
+  mercury_model.addEventListener('targetFound', () => {
+    onTargetFound(mercury_model)
+  })
+
+  venus_model.addEventListener('targetFound', () => {
+    onTargetFound(venus_model)
+  })
+
+  earth_model.addEventListener('targetFound', () => {
+    onTargetFound(earth_model)
+  })
+
+  mars_model.addEventListener('targetFound', () => {
+    onTargetFound(mars_model)
+  })
+
+  jupiter_model.addEventListener('targetFound', () => {
+    onTargetFound(jupiter_model)
+  })
+
+  saturn_model.addEventListener('targetFound', () => {
+    onTargetFound(saturn_model)
+  })
+
+  uranus_model.addEventListener('targetFound', () => {
+    onTargetFound(uranus_model)
+  })
+
+  neptune_model.addEventListener('targetFound', () => {
+    onTargetFound(neptune_model)
   })
 
 

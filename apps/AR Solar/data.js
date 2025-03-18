@@ -6,7 +6,7 @@ var planetData = {
         audio: "sun.mp3",
         text: "The sun is a giant, glowing ball that gives us warm light. It helps plants grow and keeps us from being cold and in the dark."
     },
-    mercury_mode: {
+    mercury_model: {
         id: "mercury_model",
         click_id: "mercury_3d",
         title: "Mercury",
