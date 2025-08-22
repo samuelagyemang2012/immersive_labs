@@ -1,17 +1,17 @@
 <head>
-  <!-- for optimal display on high DPI devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
-  <style>
-    html,
-    body,
-    /* #viewer {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      font-family: sans-serif;
-    } */
-  </style>
+    <!-- for optimal display on high DPI devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+    <style>
+        html,
+        body,
+        #viewer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 
 <!-- the viewer container must have a defined size -->
@@ -23,28 +23,49 @@
                     "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
                     "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5/index.module.js",
                     "@photo-sphere-viewer/gyroscope-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin@5/index.module.js",
+                    "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@5/index.module.js",
                     "@photo-sphere-viewer/stereo-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/stereo-plugin@5/index.module.js"
-                }
+                  }
             }
 </script>
 
+<!-- "@photo-sphere-viewer/gyroscope-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin@5/index.module.js", -->
+<!-- "@photo-sphere-viewer/stereo-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/stereo-plugin@5/index.module.js" -->
+
 <script type="module">
 
-  import { Viewer } from '@photo-sphere-viewer/core';
-  import { GyroscopePlugin } from '@photo-sphere-viewer/gyroscope-plugin';
-  import { StereoPlugin } from '@photo-sphere-viewer/stereo-plugin';
+    import { Viewer } from '@photo-sphere-viewer/core';
+    import { GyroscopePlugin } from '@photo-sphere-viewer/gyroscope-plugin';
+    import { StereoPlugin } from '@photo-sphere-viewer/stereo-plugin';
+    import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
 
-  const baseUrl = 'https://photo-sphere-viewer-data.netlify.app/assets/';
+    const baseUrl = 'https://photo-sphere-viewer-data.netlify.app/assets/';
 
-  new Viewer({
-    container: 'viewer',
-    panorama: 'hd.jpg',
-    caption: 'St Francis Cathedral, Xi\'an',
-    loadingImg: baseUrl+'loader.gif',
-    plugins: [
-      GyroscopePlugin,
-      StereoPlugin,
-    ],
-  });
+    new Viewer({
+        container: 'viewer',
+        panorama: 'hd.jpg',
+        caption: '<b>St. Francis Cathedral, Xi\'an</b>',
+        defaultZoomLvl: 5,
+        fisheye: true,
+        navbar: [
+            'fullscreen',
+            'caption',
+            'description',
+            'zoom',
+            'autorotate',
+            'gyroscope',
+            'stereo'
+        ],
+        loadingImg: baseUrl + 'loading.gif',
+        plugins: [
+            GyroscopePlugin,
+            StereoPlugin,
+            AutorotatePlugin.withConfig({
+                autostartDelay: 1000,
+                autorotateSpeed: '0.5rpm',
+                // autorotatePitch: '5deg',
+            }),
+        ],
+    });
 
 </script>
